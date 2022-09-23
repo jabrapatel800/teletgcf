@@ -7,8 +7,8 @@ import requests
 from pydantic import BaseModel  # pylint: disable=no-name-in-module
 from watermark import File, Position, Watermark, apply_watermark
 
-from tgcf.plugins import TgcfMessage, TgcfPlugin
-from tgcf.utils import cleanup
+from teletgcf.plugins import TeletgcfMessage, TeletgcfPlugin
+from teletgcf.utils import cleanup
 
 
 class MarkConfig(BaseModel):
@@ -37,13 +37,13 @@ def download_image(url: str, filename: str = "image.png") -> bool:
         return True
 
 
-class TgcfMark(TgcfPlugin):
+class TeletgcfMark(TeletgcfPlugin):
     id_ = "mark"
 
     def __init__(self, data: Dict[str, Any]) -> None:
         self.data = MarkConfig(**data)
 
-    async def modify(self, tm: TgcfMessage) -> TgcfMessage:
+    async def modify(self, tm: TeletgcfMessage) -> TeletgcfMessage:
         if not tm.file_type in ["gif", "video", "photo"]:
             return tm
         downloaded_file = await tm.get_file()
