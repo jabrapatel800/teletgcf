@@ -16,7 +16,7 @@ from rich import console, traceback
 from rich.logging import RichHandler
 from verlat import latest_release
 
-from tletgcf import __version__
+from teletgcf import __version__
 
 load_dotenv(".env")
 
