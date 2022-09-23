@@ -1,6 +1,6 @@
-"""Subpackage of tgcf: plugins.
+"""Subpackage of teletgcf: plugins.
 
-Contains all the first-party tgcf plugins.
+Contains all the first-party teletgcf plugins.
 """
 
 
@@ -12,8 +12,8 @@ from typing import Any, Dict
 
 from telethon.tl.custom.message import Message
 
-from tgcf.config import CONFIG
-from tgcf.utils import cleanup, stamp
+from teletgcf.config import CONFIG
+from teletgcf.utils import cleanup, stamp
 
 PLUGINS = CONFIG.plugins
 
@@ -30,7 +30,7 @@ class FileType(str, Enum):
     NOFILE = "nofile"
 
 
-class TgcfMessage:
+class TeletgcfMessage:
     def __init__(self, message: Message) -> None:
         self.message = message
         self.text = self.message.text
@@ -62,33 +62,33 @@ class TgcfMessage:
             self.new_file = None
 
 
-class TgcfPlugin:
+class TeletgcfPlugin:
     id_ = "plugin"
 
     def __init__(self, data: Dict[str, Any]) -> None:
         self.data = data
 
-    def modify(self, tm: TgcfMessage) -> TgcfMessage:
+    def modify(self, tm: TeletgcfMessage) -> TeletgcfMessage:
         """Modify the message here."""
         return tm
 
 
-def load_plugins() -> Dict[str, TgcfPlugin]:
+def load_plugins() -> Dict[str, TeletgcfPlugin]:
     """Load the plugins specified in config."""
     _plugins = {}
     for plugin_id, plugin_data in PLUGINS.items():
         if not plugin_data:
             plugin_data = {}
-        plugin_class_name = f"Tgcf{plugin_id.title()}"
+        plugin_class_name = f"Teletgcf{plugin_id.title()}"
 
         try:
-            plugin_module = import_module("tgcf.plugins." + plugin_id)
+            plugin_module = import_module("teletgcf.plugins." + plugin_id)
         except ModuleNotFoundError:
             logging.error(
                 f"{plugin_id} is not a first party plugin. Trying to load from availaible third party plugins."
             )
             try:
-                plugin_module_name = f"tgcf_{plugin_id}"
+                plugin_module_name = f"teletgcf_{plugin_id}"
                 plugin_module = import_module(plugin_module_name)
             except ModuleNotFoundError:
                 logging.error(
@@ -103,12 +103,12 @@ def load_plugins() -> Dict[str, TgcfPlugin]:
             logging.info(f"First party plugin {plugin_id} loaded!")
         try:
             plugin_class = getattr(plugin_module, plugin_class_name)
-            if not issubclass(plugin_class, TgcfPlugin):
+            if not issubclass(plugin_class, TeletgcfPlugin):
                 logging.error(
-                    f"Plugin class {plugin_class_name} does not inherit TgcfPlugin"
+                    f"Plugin class {plugin_class_name} does not inherit TeletgcfPlugin"
                 )
                 continue
-            plugin: TgcfPlugin = plugin_class(plugin_data)
+            plugin: TeletgcfPlugin = plugin_class(plugin_data)
             if not plugin.id_ == plugin_id:
                 logging.error(f"Plugin id for {plugin_id} does not match expected id.")
                 continue
@@ -120,9 +120,9 @@ def load_plugins() -> Dict[str, TgcfPlugin]:
     return _plugins
 
 
-async def apply_plugins(message: Message) -> TgcfMessage:
+async def apply_plugins(message: Message) -> TeletgcfMessage:
     """Apply all loaded plugins to a message."""
-    tm = TgcfMessage(message)
+    tm = TeletgcfMessage(message)
 
     for _id, plugin in plugins.items():
         try:

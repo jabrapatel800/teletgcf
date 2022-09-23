@@ -26,20 +26,20 @@ hard-clean: clean
 	@rm -rf .venv
 
 ver:
-	@echo tgcf $(VERSION)
+	@echo teletgcf $(VERSION)
 
 pypi:
 	@poetry publish --build
 
 docker:
-	@docker build -t tgcf .
-	@docker tag tgcf aahnik/tgcf:latest
-	@docker tag tgcf aahnik/tgcf:$(VERSION)
-	@docker build -t tgcf-min . -f Dockerfile.min
-	@docker tag tgcf-min aahnik/tgcf:minimal
-	@docker tag tgcf-min aahnik/tgcf:minimal-$(VERSION)
+	@docker build -t teletgcf .
+	@docker tag teletgcf jabrapatel800/teletgcf:latest
+	@docker tag teletgcf jabrapatel800/teletgcf:$(VERSION)
+	@docker build -t teletgcf-min . -f Dockerfile.min
+	@docker tag teletgcf-min jabrapatel800/teletgcf:minimal
+	@docker tag teletgcf-min jabrapatel800/teletgcf:minimal-$(VERSION)
 
 docker-release: docker
-	@docker push -a aahnik/tgcf
+	@docker push -a jabrapatel800/teletgcf
 
 release: pypi docker-release

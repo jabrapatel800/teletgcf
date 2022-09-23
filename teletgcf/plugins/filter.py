@@ -3,8 +3,8 @@ from typing import Any, Dict, List
 
 from pydantic import BaseModel  # pylint: disable=no-name-in-module
 
-from tgcf.plugins import FileType, TgcfMessage, TgcfPlugin
-from tgcf.utils import match
+from teletgcf.plugins import FileType, TeletgcfMessage, TeletgcfPlugin
+from teletgcf.utils import match
 
 
 class FilterList(BaseModel):
@@ -28,7 +28,7 @@ class Filters(BaseModel):
     text: TextFilter = TextFilter()
 
 
-class TgcfFilter(TgcfPlugin):
+class TeletgcfFilter(TeletgcfPlugin):
     id_ = "filter"
 
     def __init__(self, data: Dict[str, Any]) -> None:
@@ -43,7 +43,7 @@ class TgcfFilter(TgcfPlugin):
             textf.blacklist = [item.lower() for item in textf.blacklist]
             textf.whitelist = [item.lower() for item in textf.whitelist]
 
-    def modify(self, tm: TgcfMessage) -> TgcfMessage:
+    def modify(self, tm: TeletgcfMessage) -> TeletgcfMessage:
 
         if self.users_safe(tm):
             logging.info("Message passed users filter")
@@ -53,7 +53,7 @@ class TgcfFilter(TgcfPlugin):
                     logging.info("Message passed text filter")
                     return tm
 
-    def text_safe(self, tm: TgcfMessage) -> bool:
+    def text_safe(self, tm: TeletgcfMessage) -> bool:
         flist = self.filters.text
 
         text = tm.text
@@ -75,7 +75,7 @@ class TgcfFilter(TgcfPlugin):
             if match(allowed, text, self.filters.text.regex):
                 return True  # only when atleast one whitelisted pattern is found
 
-    def users_safe(self, tm: TgcfMessage) -> bool:
+    def users_safe(self, tm: TeletgcfMessage) -> bool:
         flist = self.filters.users
         sender = str(tm.sender_id)
         if sender in flist.blacklist:
@@ -85,7 +85,7 @@ class TgcfFilter(TgcfPlugin):
         if sender in flist.whitelist:
             return True
 
-    def files_safe(self, tm: TgcfMessage) -> bool:
+    def files_safe(self, tm: TeletgcfMessage) -> bool:
         flist = self.filters.files
         fl_type = tm.file_type
         if fl_type in flist.blacklist:

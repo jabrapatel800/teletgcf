@@ -7,7 +7,7 @@ os.environ["API_ID"] = "12345"
 os.environ["API_HASH"] = "abcd12345"
 
 os.environ[
-    "TGCF_CONFIG"
+    "TELETGCF_CONFIG"
 ] = """
 forwards:
 - dest:
@@ -20,6 +20,6 @@ show_forwarded_from: false
 """
 
 
-from tgcf.config import CONFIG
+from teletgcf.config import CONFIG
 
 print(CONFIG)

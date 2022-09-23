@@ -10,13 +10,13 @@ from telethon.client import TelegramClient
 from telethon.hints import EntityLike
 from telethon.tl.custom.message import Message
 
-from tgcf.config import CONFIG
+from teletgcf.config import CONFIG
 
 if TYPE_CHECKING:
-    from tgcf.plugins import TgcfMessage
+    from teletgcf.plugins import TeletgcfMessage
 
 
-async def send_message(recipient: EntityLike, tm: "TgcfMessage") -> Message:
+async def send_message(recipient: EntityLike, tm: "TeletgcfMessage") -> Message:
     """Forward or send a copy, depending on config."""
     client: TelegramClient = tm.message.client
     if CONFIG.show_forwarded_from:

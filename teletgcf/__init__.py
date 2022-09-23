@@ -1,7 +1,7 @@
-"""Package tgcf.
+"""Package teletgcf.
 
 The ultimate tool to automate custom telegram message forwarding.
-https://github.com/aahnik/tgcf
+https://github.com/aahnik/teletgcf
 """
 
 from importlib.metadata import version

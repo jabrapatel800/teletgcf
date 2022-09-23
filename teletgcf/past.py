@@ -1,4 +1,4 @@
-"""The module for running tgcf in past mode.
+"""The module for running teletgcf in past mode.
 
 - past mode can only operate with a user account.
 - past mode deals with all existing messages.
@@ -13,11 +13,11 @@ from telethon.errors.rpcerrorlist import FloodWaitError
 from telethon.tl.custom.message import Message
 from telethon.tl.patched import MessageService
 
-from tgcf import config
-from tgcf import storage as st
-from tgcf.config import API_HASH, API_ID, CONFIG, SESSION, write_config
-from tgcf.plugins import apply_plugins
-from tgcf.utils import send_message
+from teletgcf import config
+from teletgcf import storage as st
+from teletgcf.config import API_HASH, API_ID, CONFIG, SESSION, write_config
+from teletgcf.plugins import apply_plugins
+from teletgcf.utils import send_message
 
 
 async def forward_job() -> None:

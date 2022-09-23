@@ -23,4 +23,4 @@ RUN poetry build && /venv/bin/pip install dist/*.whl
 FROM base as final
 COPY --from=builder /venv /venv
 COPY LICENSE LICENSE
-CMD tgcf --loud
+CMD teletgcf --loud

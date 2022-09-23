@@ -4,7 +4,7 @@ from typing import Any, Dict
 
 from pydantic import BaseModel  # pylint: disable=no-name-in-module
 
-from tgcf.plugins import TgcfMessage, TgcfPlugin
+from teletgcf.plugins import TeletgcfMessage, TeletgcfPlugin
 
 
 class Style(str, Enum):
@@ -23,14 +23,14 @@ class Format(BaseModel):
 STYLE_CODES = {"bold": "**", "italics": "__", "code": "`", "strike": "~~", "normal": ""}
 
 
-class TgcfFormat(TgcfPlugin):
+class TeletgcfFormat(TeletgcfPlugin):
     id_ = "format"
 
     def __init__(self, data: Dict[str, Any]) -> None:
         self.format = Format(**data)
         logging.info(self.format)
 
-    def modify(self, tm: TgcfMessage) -> TgcfMessage:
+    def modify(self, tm: TeletgcfMessage) -> TeletgcfMessage:
         if self.format.style is Style.PRESERVE:
             return tm
         msg_text: str = tm.raw_text

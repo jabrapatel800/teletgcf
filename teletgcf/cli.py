@@ -1,4 +1,4 @@
-"""This module implements the command line interface for tgcf."""
+"""This module implements the command line interface for teletgcf."""
 
 import asyncio
 import logging
@@ -16,7 +16,7 @@ from rich import console, traceback
 from rich.logging import RichHandler
 from verlat import latest_release
 
-from tgcf import __version__
+from tletgcf import __version__
 
 load_dotenv(".env")
 
@@ -28,7 +28,7 @@ con = console.Console()
 
 def topper():
     fig = Figlet(font="speed")
-    rendered = fig.renderText("tgcf")
+    rendered = fig.renderText("teletgcf")
     time_passed = 0
 
     while time_passed < 5:
@@ -45,7 +45,7 @@ def topper():
 
 
 class Mode(str, Enum):
-    """tgcf works in two modes."""
+    """teletgcf works in two modes."""
 
     PAST = "past"
     LIVE = "live"
@@ -72,7 +72,7 @@ def verbosity_callback(value: bool):
     logging.info("Verbosity turned on! This is suitable for debugging")
     nl = "\n"
     logging.info(
-        f"""Running tgcf {__version__}\
+        f"""Running teletgcf {__version__}\
     \nPython {sys.version.replace(nl,"")}\
     \nOS {os.name}\
     \nPlatform {platform.system()} {platform.release()}\
@@ -89,11 +89,11 @@ def version_callback(value: bool):
 
 
 def version_check():
-    latver = latest_release("tgcf").version
+    latver = latest_release("teletgcf").version
     if __version__ != latver:
         con.print(
-            f"tgcf has a newer release {latver} availaible!\
-            \nVisit http://bit.ly/update-tgcf",
+            f"teletgcf has a newer release {latver} availaible!\
+            \nVisit http://bit.ly/update-teletgcf",
             style="bold yellow",
         )
 
@@ -101,7 +101,7 @@ def version_check():
 @app.command()
 def main(
     mode: Mode = typer.Argument(
-        ..., help="Choose the mode in which you want to run tgcf.", envvar="TGCF_MODE"
+        ..., help="Choose the mode in which you want to run teletgcf.", envvar="TELETGCF_MODE"
     ),
     verbose: Optional[bool] = typer.Option(  # pylint: disable=unused-argument
         None,
@@ -121,7 +121,7 @@ def main(
 ):
     """The ultimate tool to automate custom telegram message forwarding.
 
-    Source Code: https://github.com/aahnik/tgcf
+    Source Code: https://github.com/aahnik/teletgcf
 
     For updates join telegram channel @aahniks_code
     """
@@ -130,11 +130,11 @@ def main(
         sys.exit(1)
 
     if mode == Mode.PAST:
-        from tgcf.past import forward_job  # pylint: disable=import-outside-toplevel
+        from teletgcf.past import forward_job  # pylint: disable=import-outside-toplevel
 
         asyncio.run(forward_job())
     else:
-        from tgcf.live import start_sync  # pylint: disable=import-outside-toplevel
+        from teletgcf.live import start_sync  # pylint: disable=import-outside-toplevel
 
         asyncio.run(start_sync())
 

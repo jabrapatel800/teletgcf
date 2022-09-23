@@ -11,8 +11,8 @@ REGISTER_COMMANDS = True
 
 KEEP_LAST_MANY = 10000
 
-CONFIG_FILE_NAME = "tgcf.config.yml"
-CONFIG_ENV_VAR_NAME = "TGCF_CONFIG"
+CONFIG_FILE_NAME = "teletgcf.config.yml"
+CONFIG_ENV_VAR_NAME = "TELETGCF_CONFIG"
 
 
 class BotMessages:
@@ -20,4 +20,4 @@ class BotMessages:
 
     # pylint: disable=too-few-public-methods
     start = "Hi! I am alive"
-    bot_help = "For details visit github.com/aahnik/tgcf"
+    bot_help = "For details visit github.com/aahnik/teletgcf"

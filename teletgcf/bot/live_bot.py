@@ -1,12 +1,12 @@
-"""A bot to controll settings for tgcf live mode."""
+"""A bot to controll settings for teletgcf live mode."""
 
 import logging
 
 import yaml
 from telethon import events
 
-from tgcf import config, const, plugins
-from tgcf.bot.utils import (
+from teletgcf import config, const, plugins
+from teletgcf.bot.utils import (
     admin_protect,
     display_forwards,
     get_args,

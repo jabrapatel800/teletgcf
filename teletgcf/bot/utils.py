@@ -4,8 +4,8 @@ from typing import List
 
 from telethon import events
 
-from tgcf import config
-from tgcf.config import Forward
+from teletgcf import config
+from teletgcf.config import Forward
 
 
 def admin_protect(org_func):

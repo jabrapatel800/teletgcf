@@ -1,17 +1,17 @@
 import pytesseract
 from PIL import Image
 
-from tgcf.plugins import TgcfMessage, TgcfPlugin
-from tgcf.utils import cleanup
+from teletgcf.plugins import TeletgcfMessage, TeletgcfPlugin
+from teletgcf.utils import cleanup
 
 
-class TgcfOcr(TgcfPlugin):
+class TeletgcfOcr(TeletgcfPlugin):
     id_ = "ocr"
 
     def __init__(self, data) -> None:
         pass
 
-    async def modify(self, tm: TgcfMessage) -> TgcfMessage:
+    async def modify(self, tm: TeletgcfMessage) -> TeletgcfMessage:
 
         if not tm.file_type in ["photo"]:
             return tm

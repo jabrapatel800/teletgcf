@@ -3,8 +3,8 @@ from typing import Any, Dict
 
 from pydantic import BaseModel  # pylint: disable=no-name-in-module
 
-from tgcf.plugins import TgcfMessage, TgcfPlugin
-from tgcf.utils import replace
+from teletgcf.plugins import TeletgcfMessage, TeletgcfPlugin
+from teletgcf.utils import replace
 
 
 class Replace(BaseModel):
@@ -12,14 +12,14 @@ class Replace(BaseModel):
     regex: bool = False
 
 
-class TgcfReplace(TgcfPlugin):
+class TeletgcfReplace(TeletgcfPlugin):
     id_ = "replace"
 
     def __init__(self, data: Dict[str, str]):
         self.replace = Replace(**data)
         logging.info(self.replace)
 
-    def modify(self, tm: TgcfMessage) -> TgcfMessage:
+    def modify(self, tm: TeletgcfMessage) -> TeletgcfMessage:
         msg_text: str = tm.text
         if not msg_text:
             return tm
