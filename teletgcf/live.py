@@ -1,4 +1,4 @@
-"""The module responsible for operating tgcf in live mode."""
+"""The module responsible for operating teletgcf in live mode."""
 
 import logging
 from typing import Union
@@ -6,11 +6,11 @@ from typing import Union
 from telethon import TelegramClient, events, functions, types
 from telethon.tl.custom.message import Message
 
-from tgcf import config, const
-from tgcf import storage as st
-from tgcf.bot import get_events
-from tgcf.plugins import apply_plugins
-from tgcf.utils import send_message
+from teletgcf import config, const
+from teletgcf import storage as st
+from teletgcf.bot import get_events
+from teletgcf.plugins import apply_plugins
+from teletgcf.utils import send_message
 
 
 async def new_message_handler(event: Union[Message, events.NewMessage]) -> None:
@@ -111,7 +111,7 @@ ALL_EVENTS = {
 
 
 async def start_sync() -> None:
-    """Start tgcf live sync."""
+    """Start teletgcf live sync."""
 
     client = TelegramClient(config.SESSION, config.API_ID, config.API_HASH)
     await client.start(bot_token=config.BOT_TOKEN)

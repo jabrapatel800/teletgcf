@@ -11,7 +11,7 @@ from pydantic import BaseModel, validator  # pylint: disable=no-name-in-module
 from telethon import TelegramClient
 from telethon.sessions import StringSession
 
-from tgcf.const import CONFIG_ENV_VAR_NAME, CONFIG_FILE_NAME
+from teletgcf.const import CONFIG_ENV_VAR_NAME, CONFIG_FILE_NAME
 
 load_dotenv()
 
@@ -27,7 +27,7 @@ class Forward(BaseModel):
 
 
 class LiveSettings(BaseModel):
-    """Settings to configure how tgcf operates in live mode."""
+    """Settings to configure how teletgcf operates in live mode."""
 
     # pylint: disable=too-few-public-methods
     delete_sync: bool = False
@@ -53,7 +53,7 @@ class PastSettings(BaseModel):
 
 
 class Config(BaseModel):
-    """The blueprint for tgcf's whole config."""
+    """The blueprint for teletgcf's whole config."""
 
     # pylint: disable=too-few-public-methods
     admins: List[Union[int, str]] = []
@@ -66,20 +66,20 @@ class Config(BaseModel):
 
 
 def detect_config_type() -> int:
-    """Return 0 when no config found, 1 when tgcf.config.yml, 2 when env var, else terminate."""
-    tutorial_link = "Learn more http://bit.ly/configure-tgcf"
+    """Return 0 when no config found, 1 when teletgcf.config.yml, 2 when env var, else terminate."""
+    tutorial_link = "Learn more http://bit.ly/configure-teletgcf"
 
     if CONFIG_FILE_NAME in os.listdir():
         logging.info(f"{CONFIG_FILE_NAME} detected")
         return 1
-    if os.getenv("TGCF_CONFIG"):
+    if os.getenv("TELETGCF_CONFIG"):
         logging.info(f"env var {CONFIG_ENV_VAR_NAME} detected")
         if not ".env" in os.listdir():
             return 2
 
         logging.warning(
             f"If you can create files in your system,\
-            you should use tgcf.config.yml and not .env to define configuration {tutorial_link}"
+            you should use teletgcf.config.yml and not .env to define configuration {tutorial_link}"
         )
         sys.exit(1)
     else:
@@ -95,7 +95,7 @@ def read_config() -> Config:
         with open(CONFIG_FILE_NAME, encoding="utf8") as file:
             config_dict = yaml.full_load(file)
     elif CONFIG_TYPE == 2:
-        config_env_var = os.getenv("TGCF_CONFIG")
+        config_env_var = os.getenv("TELETGCF_CONFIG")
         config_dict = yaml.full_load(config_env_var)
     else:
         return Config()
@@ -142,9 +142,9 @@ BOT_TOKEN = get_env_var("BOT_TOKEN", optional=True)
 if SESSION_STRING:
     SESSION = StringSession(SESSION_STRING)
 elif BOT_TOKEN:
-    SESSION = "tgcf_bot"
+    SESSION = "teletgcf_bot"
 else:
-    SESSION = "tgcf_user"
+    SESSION = "teletgcf_user"
 
 CONFIG = read_config()
 
