@@ -1,30 +1,30 @@
 <!-- markdownlint-disable -->
 
 <p align="center">
-<a href = "https://github.com/aahnik/tgcf" > <img src = "https://user-images.githubusercontent.com/66209958/115183360-3fa4d500-a0f9-11eb-9c0f-c5ed03a9ae17.png" alt = "tgcf logo"  width=120> </a>
+<a href = "https://github.com/jabrapatel800/teletgcf" > <img src = "https://user-images.githubusercontent.com/66209958/115183360-3fa4d500-a0f9-11eb-9c0f-c5ed03a9ae17.png" alt = "teletgcf logo"  width=120> </a>
 </p>
 
-<h1 align="center"> tgcf </h1>
+<h1 align="center"> teletgcf </h1>
 
 <p align="center">
 The ultimate tool to automate custom telegram message forwarding.
 </p>
 
 <p align="center">
-<a href="https://github.com/aahnik/tgcf/blob/main/LICENSE"><img src="https://img.shields.io/github/license/aahnik/tgcf" alt="GitHub license"></a>
-<a href="https://github.com/aahnik/tgcf/stargazers"><img src="https://img.shields.io/github/stars/aahnik/tgcf?style=social" alt="GitHub stars"></a>
-<a href="https://github.com/aahnik/tgcf/issues"><img src="https://img.shields.io/github/issues/aahnik/tgcf" alt="GitHub issues"></a>
-<img src="https://img.shields.io/pypi/v/tgcf" alt="PyPI">
-<a href="https://twitter.com/intent/tweet?text=Wow:&amp;url=https%3A%2F%2Fgithub.com%2Faahnik%2Ftgcf"><img src="https://img.shields.io/twitter/url?style=social&amp;url=https%3A%2F%2Fgithub.com%2Faahnik%2Ftgcf" alt="Twitter"></a>
+<a href="https://github.com/jabrapatel800/teletgcf/blob/main/LICENSE"><img src="https://img.shields.io/github/license/jabrapatel800/teletgcf" alt="GitHub license"></a>
+<a href="https://github.com/jabrapatel800/teletgcf/stargazers"><img src="https://img.shields.io/github/stars/jabrapatel800/teletgcf?style=social" alt="GitHub stars"></a>
+<a href="https://github.com/jabrapatel800/teletgcf/issues"><img src="https://img.shields.io/github/issues/jabrapatel800/teletgcf" alt="GitHub issues"></a>
+<img src="https://img.shields.io/pypi/v/teletgcf" alt="PyPI">
+<a href="https://twitter.com/intent/tweet?text=Wow:&amp;url=https%3A%2F%2Fgithub.com%2Faahnik%2Fteletgcf"><img src="https://img.shields.io/twitter/url?style=social&amp;url=https%3A%2F%2Fgithub.com%2Faahnik%2Fteletgcf" alt="Twitter"></a>
 </p>
 <p align="center">
-<a href="https://github.com/aahnik/tgcf/actions/workflows/quality.yml"><img src="https://github.com/aahnik/tgcf/actions/workflows/quality.yml/badge.svg" alt="Code Quality"></a>
+<a href="https://github.com/jabrapatel800/teletgcf/actions/workflows/quality.yml"><img src="https://github.com/jabrapatel800/teletgcf/actions/workflows/quality.yml/badge.svg" alt="Code Quality"></a>
 </p>
 <!-- markdownlint-enable -->
 
 Live-syncer, Auto-poster, backup-bot, cloner, chat-forwarder, duplicator, ...
 
-Call it whatever you like! tgcf can fulfill your custom needs.
+Call it whatever you like! teletgcf can fulfill your custom needs.
 
 The *key features* are:
 
@@ -33,37 +33,37 @@ send a copy of the messages from source to destination chats.
 
     > A chat can be anything: a group, channel, person or even another bot.
 
-2. Supports two [modes](https://github.com/aahnik/tgcf/wiki/Past-vs-Live-modes-explained)
+2. Supports two [modes](https://github.com/jabrapatel800/teletgcf/wiki/Past-vs-Live-modes-explained)
 of operation _past_ or _live_.
 
     > The past mode deals with all existing messages,
     > while the live mode is for upcoming ones.
 
-3. You may [login](https://github.com/aahnik/tgcf/wiki/Login-with-a-bot-or-user-account)
+3. You may [login](https://github.com/jabrapatel800/teletgcf/wiki/Login-with-a-bot-or-user-account)
 with a _bot_ or an _user_ account.
 
     > Telegram imposes certain
-    [limitations](https://github.com/aahnik/tgcf/wiki/Using-bot-accounts#limitations)
+    [limitations](https://github.com/jabrapatel800/teletgcf/wiki/Using-bot-accounts#limitations)
     on bot accounts.
     You may use an user account to perform the forwards if you wish.
 
 4. Perform custom manipulation on messages.
 
     > You can
-    [filter](https://github.com/aahnik/tgcf/wiki/How-to-use-filters-%3F),
-    [format](https://github.com/aahnik/tgcf/wiki/Format-text-before-sending-to-destination),
-    [replace](https://github.com/aahnik/tgcf/wiki/Text-Replacement-feature-explained),
-    [watermark](https://github.com/aahnik/tgcf/wiki/How-to-use--watermarking-%3F),
-    [ocr](https://github.com/aahnik/tgcf/wiki/You-can-do-OCR)
+    [filter](https://github.com/jabrapatel800/teletgcf/wiki/How-to-use-filters-%3F),
+    [format](https://github.com/jabrapatel800/teletgcf/wiki/Format-text-before-sending-to-destination),
+    [replace](https://github.com/jabrapatel800/teletgcf/wiki/Text-Replacement-feature-explained),
+    [watermark](https://github.com/jabrapatel800/teletgcf/wiki/How-to-use--watermarking-%3F),
+    [ocr](https://github.com/jabrapatel800/teletgcf/wiki/You-can-do-OCR)
     and do whatever else you need !
 
-5. Detailed [wiki](https://github.com/aahnik/tgcf/wiki) +
+5. Detailed [wiki](https://github.com/jabrapatel800/teletgcf/wiki) +
 Video tutorial.
     > You can also [get help](#getting-help) from the community.
 
 6. If you are a python developer, writing
-[plugins](https://github.com/aahnik/tgcf/wiki/How-to-write-a-plugin-for-tgcf-%3F)
-for tgcf is like stealing candy from a baby.
+[plugins](https://github.com/jabrapatel800/teletgcf/wiki/How-to-write-a-plugin-for-teletgcf-%3F)
+for teletgcf is like stealing candy from a baby.
     > Plugins modify the message before they are sent to the destination chat.
 
 What are you waiting for? Star the repo and click Watch to recieve updates.
@@ -78,21 +78,21 @@ A youtube video is coming soon. [Subscribe](https://www.youtube.com/channel/UCcE
 ## Installation
 
 - If you are an **Windows** user, who is not familiar with the command line, the
-[Windows guide](https://github.com/aahnik/tgcf/wiki/Run-tgcf-on-Windows)
+[Windows guide](https://github.com/jabrapatel800/teletgcf/wiki/Run-teletgcf-on-Windows)
 is for you.
 
-- To install tgcf on **Android** (Termux), there exists an installer script,
+- To install teletgcf on **Android** (Termux), there exists an installer script,
 that allows you to install all dependencies by running just a single line command.
 Read the
-[guide for android](https://github.com/aahnik/tgcf/wiki/Run-on-Android-using-Termux)
+[guide for android](https://github.com/jabrapatel800/teletgcf/wiki/Run-on-Android-using-Termux)
 to learn.
 
 - If you are familiar with **Docker**, you may read the
-[docker guide](https://github.com/aahnik/tgcf/wiki/Install-and-run-using-docker)
+[docker guide](https://github.com/jabrapatel800/teletgcf/wiki/Install-and-run-using-docker)
 for an isolated installation.
 
 - Otherwise for **Linux/Mac**,
-    you may install `tgcf` via python's package manager `pip`.
+    you may install `teletgcf` via python's package manager `pip`.
 
     > **Note:** Make sure you have Python 3.8 or above installed.
     Go to [python.org](https://python.org) to download python.
@@ -100,31 +100,31 @@ for an isolated installation.
     Open your terminal and run the following commands.
 
     ```shell
-    pip install --upgrade tgcf
+    pip install --upgrade teletgcf
     ```
 
     To check if the installation succeeded, run
 
     ```shell
-    tgcf --version
+    teletgcf --version
     ```
 
 ## Usage
 
-Configuring `tgcf` is easy. You just need two files in your present directory
-(from which tgcf is invoked).
+Configuring `teletgcf` is easy. You just need two files in your present directory
+(from which teletgcf is invoked).
 
-- [`.env`](https://github.com/aahnik/tgcf/wiki/Environment-Variables)
+- [`.env`](https://github.com/jabrapatel800/teletgcf/wiki/Environment-Variables)
 : To define your environment variables easily.
 
-- [`tgcf.config.yml`](https://github.com/aahnik/tgcf/wiki/How-to-configure-tgcf-%3F)
-: An `yaml` file to configure how `tgcf` behaves.
+- [`teletgcf.config.yml`](https://github.com/jabrapatel800/teletgcf/wiki/How-to-configure-teletgcf-%3F)
+: An `yaml` file to configure how `teletgcf` behaves.
 
-In your terminal, just run `tgcf live` or `tgcf past` to start `tgcf`.
+In your terminal, just run `teletgcf live` or `teletgcf past` to start `teletgcf`.
 It will prompt you to enter your phone no. or bot token, when you run it
 for the first time.
 
-For more details run `tgcf --help` or [read wiki](https://github.com/aahnik/tgcf/wiki/CLI-Usage).
+For more details run `teletgcf --help` or [read wiki](https://github.com/jabrapatel800/teletgcf/wiki/CLI-Usage).
 
 ## Deploy to Cloud
 
@@ -138,21 +138,21 @@ on Digital Ocean.
 
 Deploying to a cloud server is an easier alternative if you cannot install
 on your own machine.
-Cloud servers are very reliable and great for running `tgcf` in live mode
+Cloud servers are very reliable and great for running `teletgcf` in live mode
 for a long time.
 
 You can enjoy smooth one-click deploys to the major cloud providers.
 
-- [Heroku](https://github.com/aahnik/tgcf/wiki/Deploy-to-Heroku)
-- [Digital Ocean](https://github.com/aahnik/tgcf/wiki/Deploy-to-Digital-Ocean)
-- [Gitpod](https://github.com/aahnik/tgcf/wiki/Run-for-free-on-Gitpod")
-- [Python Anywhere](https://github.com/aahnik/tgcf/wiki/Run-on-PythonAnywhere)
-- [Google Cloud Run](https://github.com/aahnik/tgcf/wiki/Run-on-Google-Cloud)
-- [GitHub Actions](https://github.com/aahnik/tgcf/wiki/Run-tgcf-in-past-mode-periodically)
+- [Heroku](https://github.com/jabrapatel800/teletgcf/wiki/Deploy-to-Heroku)
+- [Digital Ocean](https://github.com/jabrapatel800/teletgcf/wiki/Deploy-to-Digital-Ocean)
+- [Gitpod](https://github.com/jabrapatel800/teletgcf/wiki/Run-for-free-on-Gitpod")
+- [Python Anywhere](https://github.com/jabrapatel800/teletgcf/wiki/Run-on-PythonAnywhere)
+- [Google Cloud Run](https://github.com/jabrapatel800/teletgcf/wiki/Run-on-Google-Cloud)
+- [GitHub Actions](https://github.com/jabrapatel800/teletgcf/wiki/Run-teletgcf-in-past-mode-periodically)
 
 ## Getting Help
 
-- First of all [read the wiki](https://github.com/aahnik/tgcf/wiki)
+- First of all [read the wiki](https://github.com/jabrapatel800/teletgcf/wiki)
 and [watch the videos](https://www.youtube.com/channel/UCcEbN0d8iLTB6ZWBE_IDugg)
 to get started.
 
@@ -163,10 +163,10 @@ Try re-wording your query a few times before you give up.
 
 - If your question does not already exist,
 feel free to ask your questions in the
-[Discussion forum](https://github.com/aahnik/tgcf/discussions/new).
+[Discussion forum](https://github.com/jabrapatel800/teletgcf/discussions/new).
 Please avoid duplicates.
 
-- For reporting bugs or requesting a new feature please use the [issue tracker](https://github.com/aahnik/tgcf/issues/new)
+- For reporting bugs or requesting a new feature please use the [issue tracker](https://github.com/jabrapatel800/teletgcf/issues/new)
 of the repo.
 
 ## Contributing
